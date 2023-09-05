@@ -32,6 +32,7 @@
             <tr>
                 <th>nome</th>
                 <th>idade</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <?php foreach ($listaProfessores as $professor) { ?>
@@ -39,6 +40,10 @@
                 <tr>
                     <td><?php echo $professor["nome"]; ?></td>
                     <td><?php echo $professor["idade"]; ?></td>
+                    <td>
+                        <a href="/<?php echo FOLDER; ?>?controller=Professor&acao=editar&id=<?php echo $professor['id']; ?>" class="btn btn-primary">Editar</a>
+                        <a href="/<?php echo FOLDER; ?>?controller=Professor&acao=excluir&id=<?php echo $professor['id']; ?>" class="btn btn-primary">Excluir</a>
+                    </td>
                 </tr>
             </tbody>
         <?php } ?>
